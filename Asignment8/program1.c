@@ -1,41 +1,25 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+double CircleArea(float fRadius)
 {
-    int iDigit = 0;
-    int iCount = 0;
+    double dArea = 0.0;
 
-    if(iNo < 0)
-    {
-        iNo = -iNo;
-    }
+    dArea = 3.14 * fRadius * fRadius;
 
-    while(iNo != 0)
-    {
-        iDigit = iNo % 10;
-
-        if(iDigit % 2 == 0)
-        {
-            iCount++;
-        }
-
-        iNo = iNo / 10;
-    }
-
-    return iCount;
+    return dArea;
 }
 
 int main()
 {
-    int iValue = 0;
-    int iRet = 0;
+    float fValue = 0.0;
+    double dRet = 0.0;
 
-    printf("Enter number : ");
-    scanf("%d",&iValue);
+    printf("Enter radius : ");
+    scanf("%f",&fValue);
 
-    iRet = CountEven(iValue);
+    dRet = CircleArea(fValue);
 
-    printf("Count of even digits is : %d\n",iRet);
+    printf("Area of circle is : %lf", dRet);
 
     return 0;
 }
